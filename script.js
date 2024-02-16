@@ -17,8 +17,8 @@ async function getWeather(city) {
     if(response.status === 404){
         document.querySelector('.error').style.display = 'block';
         weather.style = 'display:none'
-    }
-    const result = await response.json();
+    }else{
+        const result = await response.json();
     console.log(result);
 
     temp.innerHTML =Math.round(result.main.temp) + '&deg;c';
@@ -39,6 +39,10 @@ async function getWeather(city) {
     }else if(result.weather[0].main==='Drizzle'){
         weatherIcon.src ="./images/drizzle.png";
     }
+    weather.style = 'display:block'
+    document.querySelector('.error').style.display = 'none';
+    }
+    
     }
 
 
@@ -46,7 +50,6 @@ async function getWeather(city) {
 
 searchBtn.addEventListener('click', () => {
     getWeather(searchBox.value);
-    weather.style = 'display:block'
-    document.querySelector('.error').style.display = 'none';
+    
 })
 
