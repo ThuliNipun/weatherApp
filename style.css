@@ -4,3 +4,16 @@
     box-sizing: border-box;
     font-family: 'Poppins' , sans-serif;
 }
+
+.card{
+    width: 90%;
+    max-width: 470px;
+    background: linear-gradient(135deg, #b10000, #41001b);
+    color: #fff;
+    margin: 100px auto 0; 
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: center;
+    
+   
+}
